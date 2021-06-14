@@ -77,9 +77,10 @@ Are you sure you want to continue? [y/N]
 
 - Menggunakan opsi -v
 - Lab berikut akan membuat WebSite, pilihan site template dapat dilihat pada: html5up.net
-- Download html5 site template, dan unzip
 
 ----
+
+### Download html5 site template, dan unzip
 
 ```bash
 $ take ~/labs/
@@ -91,6 +92,8 @@ $ rm temp.zip
 ```
 
 ----
+
+#### Menggunakan NGINX
 
 - Gunakan nginx image sebagai webserver untuk menjalankan WebSite.
 - Container nginx menggunakan direktori web sebagai volume yang dimount pada direktori /usr/share/nginx/html
@@ -112,15 +115,19 @@ $ docker run
 > - v : volume mount
 > -d : detach, jalankan container nginx di latar belakang
 ----
-- Akses website dengan menggunakan browser
+#### Akses website menggunakan Browser
 
 ```bash
 $ curl localhost:8080
 ```
 
+---
+
+#### Tugas: Ubah Title pada website
+
 ----
 
-- Ubah Title "Adam Jensen" pada website dengan nama Anda, terlebih dahulu matikan container nginx.
+#### Matikan container nginx.
 
 ```bash
 $ docker stop mynginx
@@ -131,7 +138,7 @@ $ docker stop mynginx
 > - Container mynginx setelah terhenti dengan perintah stop, secara otomatis akan dihapus dari daftar container, karena pada saat menjalankan (docker run) menggunakan opsi --rm
 
 ----
-- Ubah Title
+#### Ubah Title
 
 ```bash
 $ sed -i 's/Adam Jensen/Inixindo/g' ./web/index.html
@@ -139,7 +146,7 @@ $ sed -i 's/Adam Jensen/Inixindo/g' ./web/index.html
 
 ----
 
-- Jalankan kembali nginx container, dan lihat url **localhost:8080** pada browser:
+#### Jalankan kembali nginx container, dan lihat url **localhost:8080** pada browser:
 
 ```bash
 $ docker run 
@@ -156,6 +163,6 @@ $ docker run
 >
 > - Perhatikan meskipun container mynginx terhapus, website yang dimount melalui volume tidak ikut terhapus.
 
-----
+---
 
-Selesai
+# Selesai
